@@ -1,0 +1,259 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block title%}
+    <title>Golden Cage - Mon Compte</title>
+{%endblock%}
+    
+{%block logout%}
+    {% if login == true %}
+        <li class=" last"><a href="{{path('client_user_security_logout')}}" title="Mon Compte">Déconnexion</a></li>
+    {%endif%}
+{%endblock %}
+    
+{%block login%}
+<div class="main-container col1-layout">
+    <div class="main">
+        <div class="col-main">
+            <div class="account-create">
+                <div class="page-title">
+                    <h1>Créer un compte client</h1>
+                </div>
+                <div class="page-border">
+                    <div class="full-width">
+                        <form action="" method="post" id="form-validate">
+                            <div class="fieldset">
+                                <input type="hidden" name="success_url" value="">
+                                <input type="hidden" name="error_url" value="">
+                                <h2 class="legend">Renseignements personnel</h2>
+                                <ul class="form-list">
+                                    <li class="fields">
+                                        <div class="customer-name">
+                                            <div class="field name-firstname">
+                                                <label for="firstname" class="required"><em>*</em>Prénom</label>
+                                                <div class="input-box">
+                                                    <input type="text" id="firstname" name="firstname" value="" title="First Name" class="input-text required-entry">
+                                                </div>
+                                            </div>
+                                            <div class="field name-lastname">
+                                                <label for="lastname" class="required"><em>*</em>Nom</label>
+                                                <div class="input-box">
+                                                    <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Adresse</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Email</label>
+                                        <div class="input-box">
+                                            <input type="text" name="email" id="email_address" value="" title="Email Address" class="input-text validate-email required-entry">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Télèphone</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fieldset">
+                                <h2 class="legend">Informations de connexion</h2>
+                                <ul class="form-list">
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Nom d'utilisateur</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                    <li class="fields">
+                                        <div class="field">
+                                            <label for="password" class="required"><em>*</em>Mot de Passe</label>
+                                            <div class="input-box">
+                                                <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="confirmation" class="required"><em>*</em>Confirmer le Mot de Passe</label>
+                                            <div class="input-box">
+                                                <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <script type="text/javascript">
+                                //<![CDATA[
+                                    function toggleRememberMepopup(event){
+                                        if($('remember-me-popup')){
+                                            var viewportHeight = document.viewport.getHeight(),
+                                                docHeight      = $$('body')[0].getHeight(),
+                                                height         = docHeight > viewportHeight ? docHeight : viewportHeight;
+                                            $('remember-me-popup').toggle();
+                                            $('window-overlay').setStyle({ height: height + 'px' }).toggle();
+                                        }
+                                        Event.stop(event);
+                                    }
+
+                                    document.observe("dom:loaded", function() {
+                                        new Insertion.Bottom($$('body')[0], $('window-overlay'));
+                                        new Insertion.Bottom($$('body')[0], $('remember-me-popup'));
+
+                                        $$('.remember-me-popup-close').each(function(element){
+                                            Event.observe(element, 'click', toggleRememberMepopup);
+                                        })
+                                        $$('#remember-me-box a').each(function(element) {
+                                            Event.observe(element, 'click', toggleRememberMepopup);
+                                        });
+                                    });
+                                //]]>
+                                </script>
+                            </div>
+                            <div class="buttons-set">
+                                <p class="required">* Champs Obligatoire</p>
+                                <p class="back-link"><a href="{{path('client_user_security_login')}}" class="back-link"><small>« </small>Retour</a></p>
+                                <button type="submit" title="Submit" class="button"><span><span>Enregistrer</span></span></button>
+                            </div>
+                        </form>
+                            <script type="text/javascript">
+                            //<![CDATA[
+                                var dataForm = new VarienForm('form-validate', true);
+                                            //]]>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container col1-layout">
+    <div class="main">
+        <div class="col-main">
+            <div class="account-create">
+                <div class="page-title">
+                    <h1>Créer un compte prestataire</h1>
+                </div>
+                <div class="page-border">
+                    <div class="full-width">
+                        <form action="" method="post" id="form-validate">
+                            <div class="fieldset">
+                                <input type="hidden" name="success_url" value="">
+                                <input type="hidden" name="error_url" value="">
+                                <h2 class="legend">Renseignements personnel</h2>
+                                <ul class="form-list">
+                                    <li class="fields">
+                                        <div class="customer-name">
+                                            <div class="field name-firstname">
+                                                <label for="firstname" class="required"><em>*</em>Prénom</label>
+                                                <div class="input-box">
+                                                    <input type="text" id="firstname" name="firstname" value="" title="First Name" class="input-text required-entry">
+                                                </div>
+                                            </div>
+                                            <div class="field name-lastname">
+                                                <label for="lastname" class="required"><em>*</em>Nom</label>
+                                                <div class="input-box">
+                                                    <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Raison Sociale </label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Adresse</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Email</label>
+                                        <div class="input-box">
+                                            <input type="text" name="email" id="email_address" value="" title="Email Address" class="input-text validate-email required-entry">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Télèphone</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fieldset">
+                                <h2 class="legend">Informations de connexion</h2>
+                                <ul class="form-list">
+                                    <li>
+                                        <label for="email_address" class="required"><em>*</em>Nom d'utilisateur</label>
+                                        <div class="input-box">
+                                            <input type="text" id="lastname" name="lastname" value="" title="Last Name" class="input-text required-entry">
+                                        </div>
+                                    </li>
+                                    <li class="fields">
+                                        <div class="field">
+                                            <label for="password" class="required"><em>*</em>Mot de Passe</label>
+                                            <div class="input-box">
+                                                <input type="password" name="password" id="password" title="Password" class="input-text required-entry validate-password">
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <label for="confirmation" class="required"><em>*</em>Confirmer le Mot de Passe</label>
+                                            <div class="input-box">
+                                                <input type="password" name="confirmation" title="Confirm Password" id="confirmation" class="input-text required-entry validate-cpassword">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <script type="text/javascript">
+                                //<![CDATA[
+                                    function toggleRememberMepopup(event){
+                                        if($('remember-me-popup')){
+                                            var viewportHeight = document.viewport.getHeight(),
+                                                docHeight      = $$('body')[0].getHeight(),
+                                                height         = docHeight > viewportHeight ? docHeight : viewportHeight;
+                                            $('remember-me-popup').toggle();
+                                            $('window-overlay').setStyle({ height: height + 'px' }).toggle();
+                                        }
+                                        Event.stop(event);
+                                    }
+
+                                    document.observe("dom:loaded", function() {
+                                        new Insertion.Bottom($$('body')[0], $('window-overlay'));
+                                        new Insertion.Bottom($$('body')[0], $('remember-me-popup'));
+
+                                        $$('.remember-me-popup-close').each(function(element){
+                                            Event.observe(element, 'click', toggleRememberMepopup);
+                                        })
+                                        $$('#remember-me-box a').each(function(element) {
+                                            Event.observe(element, 'click', toggleRememberMepopup);
+                                        });
+                                    });
+                                //]]>
+                                </script>
+                            </div>
+                            <div class="buttons-set">
+                                <p class="required">* Champs Obligatoire</p>
+                                <p class="back-link"><a href="{{path('client_user_security_login')}}" class="back-link"><small>« </small>Retour</a></p>
+                                <button type="submit" title="Submit" class="button"><span><span>Enregistrer</span></span></button>
+                            </div>
+                        </form>
+                            <script type="text/javascript">
+                            //<![CDATA[
+                                var dataForm = new VarienForm('form-validate', true);
+                                            //]]>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+

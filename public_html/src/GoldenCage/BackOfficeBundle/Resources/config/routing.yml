@@ -1,0 +1,37 @@
+admin_login:
+    pattern:  /admin
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+admin_check:
+    pattern:  /admin/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    pattern:  /admin/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+    
+golden_cage_back_office_homepage:
+    pattern:  /admin/home
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:adminhome }
+
+golden_cage_back_office_Profilepage:
+    pattern:  /admin/Profile
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:adminprofile }
+golden_cage_back_office_ComptePrestatairepage:
+    pattern:  /admin/ComptePrestataire
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:compteprestataire}    
+golden_cage_back_office_CompteAdminpage:
+    pattern:  /admin/CompteAdmin
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:compteadmin}    
+golden_cage_back_office_CompteClientpage:
+    pattern:  /admin/CompteClient
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:compteclient }
+golden_cage_back_office_Statistiquepage:
+    pattern:  /admin/Statistique
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:statistique }
+golden_cage_back_office_Reclamationpage:
+    pattern:  /admin/Reclamation
+    defaults: { _controller: GoldenCageBackOfficeBundle:BackOffice:reclamation }
+
+
+

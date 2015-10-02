@@ -1,0 +1,128 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block title%}
+    <title>Golden Cage - Mon Compte</title>
+{%endblock%}
+    
+{%block logout%}
+    {% if login == true %}
+        <li class=" last"><a href="{{path('client_user_security_logout')}}" title="Mon Compte">Déconnexion</a></li>
+    {%endif%}
+{%endblock %}
+    
+{%block login%}
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="col-main">
+            <div class="my-account">
+                <div class="dashboard">
+                    
+                    <div class="indent">
+                        <div class="welcome-msg">
+                            <p class="hello"><strong>Bonjour, client  client !</strong></p>
+                            <br>
+                            <p>À partir de votre compte vous avez la possibilité de visualiser un aperçu de l'activité de vos offres et mettre à jour les informations de votre compte. </p>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="box-account box-info">
+                            <div class="col2-set">
+                                <div class="col-1">
+                                    <div class="box">
+                                        <div class="box-title">
+                                            
+                                        </div>
+                                        <div class="box-content">
+                                        <div class="fieldset">
+                                            
+                                            <h2 class="legend">Informations du compte </h2>
+                                            
+                                            <ul class="form-list">
+                                                <li class="fields">
+                                                    <div class="customer-name">
+                                                        <div class="field name-firstname">
+                                                            <label for="firstname">Prénom</label>
+                                                            <div class="input-box">
+                                                                <input readonly value="client" class="input-text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="field name-lastname">
+                                                            <label for="lastname">Nom</label>
+                                                            <div class="input-box">
+                                                                <input readonly value="client" class="input-text">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <label>Adresse</label>
+                                                    <div class="input-box">
+                                                        <input readonly value="Tunis" class="input-text">
+                                                    </div>
+                                                </li>
+                                                <li>                            
+                                                    <label>Email</label>
+                                                    <div class="input-box">
+                                                        <input value="client@gmail.com" class="input-text" readonly>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <label>Télèphone</label>
+                                                    <div class="input-box">
+                                                        <input value="22 890 288" title="Email" class="input-text" readonly>
+                                                    </div>
+                                                </li>     
+                                                <li>
+                                                    <a href="{{path('golden_cage_front_office_modifprofilepage')}}">Modifier</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="col-left sidebar"><div class="block block-account">
+            <div class="block-title">
+                <strong><span>Mon Compte</span></strong>
+            </div>
+        <div class="block-content">
+            <ul>
+                <li class="current"><strong>Informations du compte</strong></li>
+                <li><a href="{{path('golden_cage_front_office_Reservationclientpage')}}">Mes Reservations</a></li>
+            </ul>
+        </div>
+        </div>
+        <script type="text/javascript">
+        //<![CDATA[
+            function validatePollAnswerIsSelected()
+            {
+                var options = $$('input.poll_vote');
+                for( i in options ) {
+                    if( options[i].checked == true ) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        //]]>
+        </script>
+
+        <script type="text/javascript">
+        //<![CDATA[
+            var reorderFormDetail = new VarienForm('reorder-validate-detail');
+        //]]>
+        </script>
+        </div>
+    </div>
+</div>
+{%endblock%}
+

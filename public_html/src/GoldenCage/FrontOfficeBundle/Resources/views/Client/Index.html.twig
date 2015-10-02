@@ -1,0 +1,226 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block title%}
+    <title>Golden Cage - Index</title>
+{%endblock%}
+    
+{%block body%}
+    
+<body class=" cms-index-index cms-home">
+    
+<div class="wrapper">
+    <noscript>
+            &lt;div class="noscript"&gt;
+            &lt;div class="noscript-inner"&gt;
+            &lt;p&gt;&lt;strong&gt;JavaScript seem to be disabled in your browser.&lt;/strong&gt;&lt;/p&gt;
+            &lt;p&gt;You must have JavaScript enabled in your browser to utilize the functionality of this website.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+    </noscript>
+    <div class="page">
+        <div class="header">
+            <p class="welcome-msg">&nbsp;</p>
+            <div class="col-1">
+                <form id="search_mini_form" action="#" method="get">
+                    <div class="form-search">
+                        <label for="search">Search:</label>
+                        <input id="search" type="text" name="q" value="" class="input-text" autocomplete="off">
+                        <button type="submit" title="Search" class="button"><span><span>Search</span></span></button>
+                        <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+                        <script type="text/javascript">
+                        //<![CDATA[
+                                var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Search entire store here...');
+                                searchForm.initAutocomplete('http://livedemo00.template-help.com/magento_36548/catalogsearch/ajax/suggest/', 'search_autocomplete');
+                        //]]>
+                        </script>
+                    </div>
+                </form>
+            </div>
+            <div class="logo-box">
+                <h1 class="logo"><strong>Golden Cage</strong><a href="" title="WeddingStore" class="logo"><img src="{{ asset('Client/images/logo.jpg') }}" alt="WeddingStore"></a></h1>
+            </div>
+            <div class="col-2">
+                <div class="block-currency">
+                    <label>Votre devise</label>
+                    <div class="block-content">
+                        <select name="currency" title="Select Your Currency">
+                                <option value="" selected="selected">
+                                Tunisien Dinar - TND </option>
+                                <option value="">
+                                Euro - EUR </option>
+                                <option value="">
+                                US Dollar - USD </option>
+                        </select>
+                    </div>
+                </div>
+                <br class="clear"/>
+                <br class="clear"/>
+            </div>
+            <br class="clear"/>
+            
+            <div class="menu-block">
+                <div class="content">
+                    <div class="nav-container">
+                        <ul id="nav">
+                            <li class="level0 nav-2 level-top parent">
+                                <a href="#" class="level-top">
+                                <span>La mariée</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="">
+                                        <span>Bijoux et Accessoires</span>
+                                        </a>
+                                    </li>
+                                    <li  class="level1 nav-2-1 first">
+                                        <a href="">
+                                        <span>Robe de mariée</span>
+                                        </a>
+                                    </li>
+                                    <li class="level1 nav-2-3 last">
+                                        <a href="#">
+                                        <span>Coiffure & Maquiallage</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-3 level-top">
+                                <a href="#" class="level-top">
+                                <span>Le marie</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Costume</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-1 level-top first">
+                                <a href="#" class="level-top">
+                                <span>La réception</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Salle de fête</span>
+                                        </a>
+                                    </li>
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Fleuriste</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-5 level-top last">
+                                <a href="#" class="level-top">
+                                <span>Animation</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Troupe Musicale</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-5 level-top last">
+                                <a href="#" class="level-top">
+                                <span>Gastronomie</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Patisserie</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-4 level-top">
+                                <a href="#" class="level-top">
+                                <span>Photographe</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Photographe</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level0 nav-5 level-top last">
+                                <a href="#" class="level-top">
+                                <span>Voyage</span>
+                                </a>
+                                <ul class="level0">
+                                    <li class="level1 nav-2-1 first">
+                                        <a href="#">
+                                        <span>Agence de voyage</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-bot">&nbsp;</div>
+            </div>
+            <div class="top-links-block">
+                <ul class="links">
+                    <li class="first"><a href="#" title="My Account">Mon Compte</a></li>
+                    <li><a href="#" title="My Wishlist">Favoris</a></li>
+                    <li><a href="#" title="My Cart" class="top-link-cart">Mon Panier</a></li>
+                    <li><a href="#" title="Checkout" class="top-link-checkout">Checkout</a></li>
+                    <li class=" last"><a href="#" title="Log In">Log In</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="page one-page-content">
+        <div class="main-container col1-layout">
+            <div class="main">
+                <div class="col-main">
+                    <div class="std"><div class="clear"></div>
+                    <div class="flash">
+                        <div id="flashcontent"><embed type="application/x-shockwave-flash" src="{{ asset('Client/css/header_v8.swf') }}" width="100%" height="665" id="mymovie" name="mymovie" quality="high" scale="noscale" wmode="transparent"></div>
+                        <script type="text/javascript" src="{{ asset('Client/css/flashobject.js') }}"></script>
+                        <script type="text/javascript" src="{{ asset('Client/css/flashparameters.js') }}"></script>
+                        <script type="text/javascript">
+                                flash_start();
+                        </script>
+                    </div>
+                        <a href="Acceuil" class="enter-store"><img src="{{ asset('Client/images/enter_store.jpg') }}" alt=""></a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="footer">
+            <div class="footer-block">
+                <ul>
+                    <li><a href="#">A propos de nous</a></li>
+                    <li class="last"><a href="#">Service Consomateur</a></li>
+                </ul> 
+                <ul class="links">
+                    <li class="first"><a href="#" title="Site Map">Map du site</a></li>
+                    <li><a href="#" title="Search Terms">Recherche</a></li>
+                    <li><a href="#" title="Advanced Search">Recherche avancé</a></li>
+                    <li class=" last"><a href="#" title="Contact Us">Contacter Nous</a></li>
+                </ul>
+                <div class="copy">© <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script> Golden Cage. All Rights Reserved.</div>
+                <div class="clear"></div>
+            </div>
+            <div class="right"></div>
+            <div class="clear"></div>
+        </div> 
+    </div>
+</div>
+    
+</body>
+    
+{%endblock%}

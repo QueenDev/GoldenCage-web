@@ -1,0 +1,88 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block logout%}
+    {% if login == true %}
+        <li class=" last"><a href="{{path('client_user_security_logout')}}" title="Mon Compte">Déconnexion</a></li>
+    {%endif%}
+{%endblock %}
+
+{%block title%}
+    <title>Golden Cage - TYPE DE SERVICE</title>
+{%endblock%}
+    
+{%block content%}
+<div class="page-title category-title">
+    <h1>Type de service</h1>
+</div>
+<ol class="products-list" id="products-list">
+    <li class="item odd">
+        <div class="product-block">
+            <a href="{{path('golden_cage_front_office_offrepage')}}" title="Offre 1" class="product-image">
+                <img src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/small_image/100x146/9df78eab33525d08d6e5fb8d27136e95/f/i/file_8.jpg" width="100" height="146" alt="Bridal Toss Garter">
+            </a>
+            <div class="product-shop">
+                <div class="f-fix">
+                    <h2 class="product-name"><a href="{{path('golden_cage_front_office_offrepage')}}" title="Offre 1">Offre 1</a></h2>
+                    {% if rate == true %}
+                        <div class="ratings">
+                            <div class="rating-box">
+                                <div class="rating" style="width:97%"></div>
+                            </div>
+                        </div>
+                    {%endif%}
+                    <span><div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></span>
+                    <div class="price-box">
+                        <span class="regular-price" id="product-price-7">
+                            <span class="price">Prix offre 1</span>                
+                        </span>                        
+                    </div>               
+                    <br class="clear">
+                </div>
+            </div>
+            <br class="clear">
+            <div class="desc std">
+                <p>Description</p>                    
+                <a href="{{path('golden_cage_front_office_offrepage')}}" title="Détaillé cette offre" class="link-learn">Afficher Plus</a>
+            </div>
+            {% if rate == true %}
+                <p><button type="button" title="Ajouter aux Panier" class="button btn-cart" ><span><span>Commander</span></span></button></p>
+            {%endif%}            
+        </div>
+    </li>
+    <li class="item odd">
+        <div class="product-block">
+            <a href="{{path('golden_cage_front_office_offrepage')}}" title="Offre 2" class="product-image">
+                <img src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/small_image/100x146/9df78eab33525d08d6e5fb8d27136e95/f/i/file_8.jpg" width="100" height="146" alt="Bridal Toss Garter">
+            </a>
+            <div class="product-shop">
+                <div class="f-fix">
+                    <h2 class="product-name"><a href="{{path('golden_cage_front_office_offrepage')}}" title="Offre 2">Offre 2</a></h2>
+                    {% if rate == true %}
+                        <div class="ratings">
+                            <div class="rating-box">
+                                <div class="rating" style="width:97%"></div>
+                            </div>
+                        </div>
+                    {%endif%}
+                    <span><div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></span>
+                    <div class="price-box">
+                        <span class="regular-price" id="product-price-7">
+                            <span class="price">Prix offre 2</span>                
+                        </span>                        
+                    </div>               
+                    <br class="clear">
+                </div>
+            </div>
+            <br class="clear">
+            <div class="desc std">
+                <p>Description offre 2</p>                    
+                <a href="{{path('golden_cage_front_office_offrepage')}}" title="Détaillé cette offre" class="link-learn">Afficher Plus</a>
+            </div>
+            {% if rate == true %}
+                <p><button type="button" title="Ajouter aux Panier" class="button btn-cart" ><span><span>Commander</span></span></button></p>
+            {%endif%} 
+        </div>
+    </li>
+</ol>
+{%endblock%}
+

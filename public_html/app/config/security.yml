@@ -1,0 +1,50 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_USER:        ROLE_CLIENT
+        ROLE_PREST:       ROLE_PREST
+        ROLE_ADMIN:       ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        admin:
+            pattern: /admin(.*)
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                login_path: /admin
+                check_path: /admin/login_check
+                default_target_path: /admin/home
+            logout:       
+                path:  /admin/logout
+                target: /admin
+            anonymous:    true
+        
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                login_path: /client/login
+                check_path: /client/login_check
+                default_target_path: /Acceuil
+            logout:     
+                path:  /client/logout
+                target: /client/login
+            anonymous:    true
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /Prestataire/Compte, role: ROLE_PREST }
+        - { path: ^/client/Compte, role: ROLE_USER }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+        
+        - { path: ^/admin/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/logout$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/login_check$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }

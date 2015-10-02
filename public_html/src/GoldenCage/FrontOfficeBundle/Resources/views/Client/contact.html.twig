@@ -1,0 +1,69 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block logout%}
+    {% if login == true %}
+        <li class=" last"><a href="{{path('client_user_security_logout')}}" title="Mon Compte">Déconnexion</a></li>
+    {%endif%}
+{%endblock %}
+
+{%block title%}
+    <title>Golden Cage - TYPE DE SERVICE</title>
+{%endblock%}
+    
+{%block content%}
+<div id="messages_product_view">
+
+</div>
+<div class="page-title">
+    <h1>Contacter Nous</h1>
+</div>
+<div class="page-border">
+    <div class="full-width">
+        <form action="http://livedemo00.template-help.com/magento_36548/contacts/index/post/" id="contactForm" method="post">
+            <div class="fieldset">
+                <h2 class="legend">Coordonnées</h2>
+                <ul class="form-list">
+                    <li class="fields">
+                    <div class="field">
+                        <label for="name" class="required"><em>*</em>Nom</label>
+                        <div class="input-box">
+                            <input name="name" id="name" title="Name" value="" class="input-text required-entry" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                    <label for="email" class="required"><em>*</em>Email</label>
+                    <div class="input-box">
+                    <input name="email" id="email" title="Email" value="" class="input-text required-entry validate-email" type="text">
+                    </div>
+                    </div>
+                    </li>
+                    <li>
+                    <label for="telephone">Télèphone</label>
+                    <div class="input-box">
+                    <input name="telephone" id="telephone" title="Telephone" value="" class="input-text" type="text">
+                    </div>
+                    </li>
+                    <li class="wide">
+                    <label for="comment" class="required"><em>*</em>Message</label>
+                    <div class="input-box">
+                    <textarea name="comment" id="comment" title="Comment" class="required-entry input-text" cols="5" rows="3"></textarea>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="buttons-set">
+                <p class="required">* Champs Obligatoires</p>
+                <input type="text" name="hideit" id="hideit" value="" style="display:none !important;">
+                <button type="submit" title="Submit" class="button"><span><span>Envoyer</span></span></button>
+            </div>
+        </form>
+            <script type="text/javascript">
+                //<![CDATA[
+                    var contactForm = new VarienForm('contactForm', true);
+                //]]>
+            </script>
+    </div>
+</div> 
+
+{%endblock%}
+

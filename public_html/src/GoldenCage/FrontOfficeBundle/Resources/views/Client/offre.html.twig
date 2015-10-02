@@ -1,0 +1,202 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{%block logout%}
+    {% if login == true %}
+        <li class=" last"><a href="{{path('client_user_security_logout')}}" title="Mon Compte">Déconnexion</a></li>
+    {%endif%}
+{%endblock %}
+
+{%block title%}
+    <title>Golden Cage - TYPE DE SERVICE -OFFRE</title>
+{%endblock%}
+
+{%block content%}
+
+<div class="page-title category-title">
+    <h1>Type de service > Offre</h1>
+</div>
+            
+        
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice({"productId":"3","priceFormat":{"pattern":"$%s","precision":2,"requiredPrecision":2,"decimalSymbol":".","groupSymbol":",","groupLength":3,"integerRequired":1},"includeTax":"false","showIncludeTax":false,"showBothPrices":false,"productPrice":296.35,"productOldPrice":296.35,"priceInclTax":296.35,"priceExclTax":296.35,"skipCalculate":1,"defaultTax":8.25,"currentTax":0,"idSuffix":"_clone","oldPlusDisposition":0,"plusDisposition":0,"oldMinusDisposition":0,"minusDisposition":0});
+</script>
+
+<div id="messages_product_view"></div>
+<div class="product-view">
+    <div class="product-essential">
+    <form action="" method="post" id="product_addtocart_form" enctype="multipart/form-data">
+        <div class="no-display">
+            <input type="hidden" name="product" value="3">
+            <input type="hidden" name="related_product" id="related-products-field" value="">
+        </div>
+        <div class="product-shop">
+            <div class="product-name">
+                <h1>Offre 1</h1>
+            </div>
+            
+            <span><div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></span>
+            <br class="clear">    
+            <br class="clear">
+            {% if rate == true %}
+                <form action="" method="post">
+                
+                    <div class="ratings">
+                        <div class="rating-box">
+                            <div class="rating" style="width:97%"></div>
+                        </div>
+                    </div>
+                    <p class="no-rating"><a href="">Evaluer</a></p>
+                </form>
+            {%endif%}
+            
+            <div class="product-type">
+                
+                <div class="price-box">
+                <span class="regular-price" id="product-price-3">
+                    <br class="clear">
+                </span>
+                </div>
+                <br class="clear">
+                <br class="clear">
+            </div>
+            <div class="short-description">
+                <h2>Description</h2>
+                <div class="std"><p>TEXTE DESCRIPTION</p></div>
+                <br class="clear">
+                <hr>
+            </div>
+            
+                <script type="text/javascript">decorateGeneric($$('#product-options-wrapper dl'), ['last']);</script>
+            <div class="product-options-bottom">
+                <div class="price-box">
+                    <span class="regular-price" id="product-price-3_clone">
+                        <span class="price">Prix de l'offre</span>                
+                    </span>
+                </div>
+                {% if rate == true %}
+                    <div class="add-to-cart">
+                        <button type="button" title="Ajouter au Panier" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Commander</span></span></button>
+                    </div>
+                {%endif%}                
+            </div>
+        </div>
+        <div class="product-img-box">
+            <p class="product-image product-image-zoom" style="overflow: hidden; z-index: 9;">
+            <img id="image" src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/file_2_2.jpg" alt="Italian Merino Wool 150s Chalk Stripe Men Suits Complete with Jacket and Pants Jet Black" title="Offre 1" style="width: 267px; left: 0px; top: 0px; z-index: 0;"></p>
+            <p class="zoom-notice" id="track_hint">Double click on above image to view full picture</p>
+            <div class="zoom">
+                <img id="zoom_out" src="http://livedemo00.template-help.com/magento_36548/skin/frontend/default/theme138/images/slider_btn_zoom_out.gif" alt="Zoom Out" title="Zoom Out" class="btn-zoom-out">
+                <div id="track" style="visibility: visible;">
+                    <div id="handle" class="selected" style="left: 0px;"></div>
+                </div>
+                <img id="zoom_in" src="http://livedemo00.template-help.com/magento_36548/skin/frontend/default/theme138/images/slider_btn_zoom_in.gif" alt="Zoom In" title="Zoom In" class="btn-zoom-in">
+            </div>
+
+            <script type="text/javascript">
+                //<![CDATA[
+                    Event.observe(window, 'load', function() {
+                        product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
+                    });
+                //]]>
+            </script>
+
+            <div class="more-views">
+                <h2>More Views</h2>
+                <ul>
+                    <li>
+                        <a href="#" onclick="" title=""><img src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/thumbnail/66x/9df78eab33525d08d6e5fb8d27136e95/f/i/file_2_2.jpg" width="66" height="66" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" title=""><img src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/thumbnail/66x/9df78eab33525d08d6e5fb8d27136e95/f/i/file_4.jpg" width="66" height="66" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#" title=""><img src="http://livedemo00.template-help.com/magento_36548/media/catalog/product/cache/1/thumbnail/66x/9df78eab33525d08d6e5fb8d27136e95/f/i/file_1_2.jpg" width="66" height="66" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clearer"></div>
+    </form>
+        
+        <script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+
+</div>
+    
+</div>
+<div id="map-popup" class="map-popup" style="display:none;">
+    <a href="#" class="map-popup-close" id="map-popup-close">x</a>
+    <div class="map-popup-arrow"></div>
+    <div class="map-popup-heading"><h2 id="map-popup-heading"></h2></div>
+    <div class="map-popup-content" id="map-popup-content">
+        <div class="map-popup-checkout">
+            <form action="" method="POST" id="product_addtocart_form_from_popup">
+                <input type="hidden" name="product" class="product_id" value="" id="map-popup-product-id">
+                <button type="button" title="Add to Cart" class="button btn-cart" id="map-popup-button"><span><span>Add to Cart</span></span></button>
+            </form>
+        </div>
+        <div class="map-popup-msrp" id="map-popup-msrp-box"><strong>Price:</strong> <span style="text-decoration:line-through;" id="map-popup-msrp"></span></div>
+        <div class="map-popup-price" id="map-popup-price-box"><strong>Actual Price:</strong> <span id="map-popup-price"></span></div>
+        <script type="text/javascript">
+        //<![CDATA[
+            document.observe("dom:loaded", Catalog.Map.bindProductForm);
+        //]]>
+        </script>
+    </div>
+    <div class="map-popup-text" id="map-popup-text">Our price is lower than the manufacturer's "minimum advertised price."  As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.</div>
+    <div class="map-popup-text" id="map-popup-text-what-this">Our price is lower than the manufacturer's "minimum advertised price."  As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.</div>
+</div>
+
+<script type="text/javascript">
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+</script>
+<center><div class="fb-comments" data-width="700" data-numposts="5" data-colorscheme="light"></div></center>
+{%endblock%}

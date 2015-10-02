@@ -1,0 +1,234 @@
+{%extends "GoldenCageBackOfficeBundle::layoutadmin.html.twig"%}
+{%block pieData%}
+    {% for c in traiter %}
+        {% for d in non_traiter %}
+       
+		var pieData = [
+
+                                {
+                                        value:{{ c.adm}},
+                                        color:"#008000"
+                                },
+
+                                {
+                                        value :{{ d.adm1}},
+                                        color : "#FF0000"
+                                }
+
+
+
+                ];
+                    
+        {% endfor %}
+    {% endfor %}
+    var myPie = new Chart(document.getElementById("pie-chart").getContext("2d")).Pie(pieData);
+{%endblock%}
+                
+                
+                
+{%block Content%}
+<div class="main-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span6">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Statistique sur les réclamations</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="pie-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                {% for c in traiter %}
+                                    {% for d in non_traiter %}
+                                        <h4 style="color:#008000 "> ---- &nbsp;&nbsp; {{c.adm}} traiter &nbsp;&nbsp;&nbsp;&nbsp;  </h4> 
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for c in traiter %}
+                                    {% for d in non_traiter %}
+                                        <h4 style="color:#FF0000 "> ---- &nbsp;&nbsp; {{d.adm1}} non traiter &nbsp;&nbsp;&nbsp;&nbsp;    </h4>
+                                    {% endfor %}
+                                {% endfor %}
+                                <!-- /pie-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Statistique sur les services</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="bar-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /bar-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Line Chart</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="area-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /line-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                    </div>
+                    <!-- /span6 -->
+                    <div class="span6">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Donut Chart</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="donut-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /bar-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    A Chart</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="line-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                    </div>
+                    <!-- /span6 -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+{%endblock %}
+
+{%block doughtdata %}
+        var doughnutData = [
+                    {
+                        value: 30,
+                        color: "#F7464A"
+                    },
+                    {
+                        value: 50,
+                        color: "#46BFBD"
+                    },
+                    {
+                        value: 100,
+                        color: "#FDB45C"
+                    },
+                    {
+                        value: 40,
+                        color: "#949FB1"
+                    },
+                    {
+                        value: 120,
+                        color: "#4D5360"
+                    }
+
+            ];
+        var myDoughnut = new Chart(document.getElementById("donut-chart").getContext("2d")).Doughnut(doughnutData);
+        
+{%endblock%}
+        
+{%block lineChartData %}
+        var lineChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+				{
+				    fillColor: "rgba(220,220,220,0.5)",
+				    strokeColor: "rgba(220,220,220,1)",
+				    pointColor: "rgba(220,220,220,1)",
+				    pointStrokeColor: "#fff",
+				    data: [65, 59, 90, 81, 56, 55, 40]
+				},
+				{
+				    fillColor: "rgba(151,187,205,0.5)",
+				    strokeColor: "rgba(151,187,205,1)",
+				    pointColor: "rgba(151,187,205,1)",
+				    pointStrokeColor: "#fff",
+				    data: [28, 48, 40, 19, 96, 27, 100]
+				}
+			]
+
+        }
+
+        var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+
+    {%endblock%}
+
+{%block barChartData %}
+        var barChartData = {
+            labels: ["Salle de fête", "Robe", "Costume", "Voyage", "Coiffure", "Troupe Musicale", "Photographe", "Patisserie"],
+            datasets: [
+				{
+				    fillColor: "rgba(220,220,220,0.5)",
+				    strokeColor: "rgba(220,220,220,1)",
+				    data: [65, 59, 90, 81, 56, 55, 40,20]
+				},
+				{
+				    fillColor: "rgba(151,187,205,0.5)",
+				    strokeColor: "rgba(151,187,205,1)",
+				    data: [28, 48, 40, 19, 96, 27, 100,20]
+				}
+			]
+
+        }
+
+var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
+{%endblock%}
+{%block chartData%}
+
+        var chartData = [
+			{
+			    value: Math.random(),
+			    color: "#D97041"
+			},
+			{
+			    value: Math.random(),
+			    color: "#C7604C"
+			},
+			{
+			    value: Math.random(),
+			    color: "#21323D"
+			},
+			{
+			    value: Math.random(),
+			    color: "#9D9B7F"
+			},
+			{
+			    value: Math.random(),
+			    color: "#7D4F6D"
+			},
+			{
+			    value: Math.random(),
+			    color: "#584A5E"
+			}
+		];
+    var myPolarArea = new Chart(document.getElementById("line-chart").getContext("2d")).PolarArea(chartData);
+{%endblock %}

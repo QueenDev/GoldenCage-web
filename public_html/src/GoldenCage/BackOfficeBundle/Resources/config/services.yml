@@ -1,0 +1,7 @@
+parameters:
+#    golden_cage_back_office.example.class: GoldenCage\BackOfficeBundle\Example
+
+services:
+#    golden_cage_back_office.example:
+#        class: %golden_cage_back_office.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

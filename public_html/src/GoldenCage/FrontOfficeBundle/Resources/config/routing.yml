@@ -1,0 +1,71 @@
+client_user_security_login:
+    pattern:  /client/login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+client_user_security_check:
+    pattern:  /client/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+client_user_security_logout:
+    pattern:  /client/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+
+golden_cage_front_office_und:
+    path: /undefined
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /Acceuil
+        permanent: true
+
+golden_cage_front_office_indexpage:
+    pattern:  /
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:index }
+
+golden_cage_front_office_homepage:
+    pattern:  /Acceuil
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:acceuil }
+
+golden_cage_front_office_contactpage:
+    pattern:  /Contact
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:contact }
+
+golden_cage_front_office_offrepage:
+    pattern:  /Service/Offre
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:offre }
+
+golden_cage_front_office_inscriptionclientpage:
+    pattern:  /Inscription
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:inscriptionclient }
+
+golden_cage_front_office_profilepage:
+    pattern:  /client/Compte
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:compteClient }
+    
+golden_cage_front_office_modifprofilepage:
+    pattern:  /client/ModifierCompte
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:modifcompteClient }
+    
+golden_cage_front_office_Reservationclientpage:
+    pattern:  /client/MesReservations
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:affichreservationClient }
+
+golden_cage_front_office_profilePrestpage:
+    pattern:  /Prestataire/Compte
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:comptePrest}
+
+golden_cage_front_office_modifprofilePrestpage:
+    pattern:  /Prestataire/ModifierCompte
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:modifcomptePrest}
+
+golden_cage_front_office_offresPrestpage:
+    pattern:  /Prestataire/Offres
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:affichoffrePrest}
+
+golden_cage_front_office_ajoutoffrePrestpage:
+    pattern:  /Prestataire/AjouterOffre
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:ajoutoffrePrest}
+
+golden_cage_front_office_modifoffrePrestpage:
+    pattern:  /Prestataire/ModifierOffre
+    defaults: { _controller: GoldenCageFrontOfficeBundle:FrontOffice:modifoffrePrest}
+

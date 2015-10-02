@@ -1,0 +1,38 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+<div class="account-container">
+    <div class="content clearfix">
+        <form action="{{ path("admin_check") }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            <h1>Login </h1>		
+            <div class="login-fields">
+		<div class="field">
+                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Utilisateur" class="login username-field" />
+                </div> <!-- /field -->
+
+                <div class="field">
+                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                    <input type="password" id="password" name="_password" required="required" placeholder="Mot de passe" class="login password-field"/>
+                </div> <!-- /password -->
+            </div> <!-- /login-fields -->
+			
+            <div class="login-actions">
+                <span class="login-checkbox">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="field login-checkbox" tabindex="4" />
+                    <label class="choice" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                </span>
+                <input class="button btn btn-success btn-large" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+              
+            </div> <!-- .actions -->
+                    {% if error %}
+                       <font color="red">{{ error|trans }}</font>
+                    {% endif %} 
+	</form>
+    </div> <!-- /content -->	
+</div> <!-- /account-container -->
+{% endblock fos_user_content %}

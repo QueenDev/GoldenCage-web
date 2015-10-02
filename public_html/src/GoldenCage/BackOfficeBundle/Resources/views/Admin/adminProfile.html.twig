@@ -1,0 +1,125 @@
+{%extends "GoldenCageBackOfficeBundle::layoutadmin.html.twig"%}
+{%block Content%}
+<div class="main-inner">
+    <div class="container">
+        <div class="row">
+            <div class="span12">      		
+                <div class="widget ">
+                    <div class="widget-header">
+                        <i class="icon-user"></i>
+                        <h3>Mon Profile</h3>
+                    </div> <!-- /widget-header -->
+					
+                    <div class="widget-content">
+			<div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                  <a href="#formcontrols" data-toggle="tab">Informations</a>
+                                </li>
+                                <li >
+                                  <a href="#formpass" data-toggle="tab">Mot de passe</a>
+                                </li>
+                            </ul>
+                            <br>
+                            <div class="tab-content">
+				<div class="tab-pane active" id="formcontrols">
+                                    <form id="edit-profile" class="form-horizontal" method="POST" action="{{path('golden_cage_back_office_Profilepage')}}">
+					<fieldset>			
+                                            <div class="control-group">		
+                                                {%for v in util%}
+                                                
+                                                <label class="control-label" for="username"></label>
+                                                <div class="controls">
+                                                    <input type="text" class="span6 disabled" id="username" value="{{log}}" disabled>
+                                                    <p class="help-block">le login est pour la connection et vous ne pouvez pas le changer</p>
+                                                </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+														
+                                            <div class="control-group">											
+                                                    <label class="control-label" for="firstname">Prénom</label>
+                                                    <div class="controls">
+                                                            {{form_widget(form.prenom, {'attr': {'value': v.getPrenom() } } ) }}
+                                                    </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+										
+                                            <div class="control-group">											
+                                                    <label class="control-label" for="lastname">Nom</label>
+                                                    <div class="controls">
+                                                        {{form_widget(form.nom, {'attr': {'value': v.getNom() } } ) }}
+                                                            
+                                                    </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+										
+                                            <div class="control-group">											
+                                                    <label class="control-label" for="email">Email Address</label>
+                                                    <div class="controls">
+                                                        {{form_widget(form.email, {'attr': {'value': v.getEmail() } } ) }}
+                                                            
+                                                    </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+                                            
+                                            <div class="control-group">											
+                                                    <label class="control-label" for="firstname">Adresse</label>
+                                                    <div class="controls">
+                                                        {{form_widget(form.adresse, {'attr': {'value': v.getAdresse() } } ) }}
+                                                            
+                                                    </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+                                            
+                                            <div class="control-group">											
+                                                    <label class="control-label" for="firstname">N° de télèphone</label>
+                                                    <div class="controls">
+                                                        {{form_widget(form.telephone, {'attr': {'value': v.getTelephone() } } ) }}
+                                                    </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+                                           
+                                            {%endfor%}
+                                            <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Save</button> 
+                                                    <button class="btn">Cancel</button>
+                                            </div> <!-- /form-actions -->
+                                        </fieldset>
+                                    </form>
+                                </div>
+								
+                                <div class="tab-pane" id="formpass">
+                                        
+                                    <form id="edit-profile" class="form-horizontal">
+					<fieldset>			
+                                            <div class="control-group">											
+                                                <label class="control-label" for="password1">Mot de Passe</label>
+                                                <div class="controls">
+                                                        <input type="password" class="span4" id="password1" value="">
+                                                </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+                                            <div class="control-group">											
+                                                <label class="control-label" for="password1">Nouveau Mot de Passe</label>
+                                                <div class="controls">
+                                                        <input type="password" class="span4" id="password1" value="">
+                                                </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+											
+                                            <div class="control-group">											
+                                                <label class="control-label" for="password2">Confirmer le Nouveau Mot de Passe</label>
+                                                <div class="controls">
+                                                        <input type="password" class="span4" id="password2" value="">
+                                                </div> <!-- /controls -->				
+                                            </div> <!-- /control-group -->
+			
+                                            <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Save</button> 
+                                                    <button class="btn">Cancel</button>
+                                            </div> <!-- /form-actions -->
+                                        </fieldset>
+                                    </form>
+                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /widget-content -->
+                </div> <!-- /widget -->
+            </div> <!-- /span8 -->
+        </div> <!-- /row -->
+    </div> <!-- /container -->
+</div>
+{%endblock %}

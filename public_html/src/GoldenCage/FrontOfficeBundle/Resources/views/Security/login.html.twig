@@ -1,0 +1,136 @@
+{% extends "GoldenCageFrontOfficeBundle::TemplateClient.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans }}</div>
+{% endif %}
+
+
+{% endblock fos_user_content %}
+
+    
+    
+{%block login %}
+</div>
+    <div class="page one-page-content">
+    <div class="main-container col1-layout">
+        <div class="main">
+            <div class="col-main">
+                <div class="account-login">
+                    <div class="page-title">
+                        <h1>Se connecter ou Créer un Compte</h1>
+                    </div>
+                    <div class="page-border">
+                        <div class="full-width">
+                            <form action="{{ path("client_user_security_check") }}" method="post" id="login-form">
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                <div class="col2-set">
+                                    <div class="col-1 new-users">
+                                        <div class="content">
+                                            <h2>Nouveau Client</h2>
+                                            <p>En créant un compte sur notre boutique, vous serez en mesure de se déplacer à travers le processus de paiement plus rapide, stocker plusieurs adresses de livraison, consulter et suivre vos commandes dans votre compte et plus encore.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 registered-users">
+                                        <div class="content">
+                                            <h2>Client enregistré</h2>
+                                            <p>Si vous avez un compte, connecter vous</p>
+                                            <br>
+                                            <ul class="form-list">
+                                                <li>
+                                                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                                                    <div class="input-box">
+                                                    <input class="input-text required-entry " type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                                                    <div class="input-box">
+                                                    <input class="input-text required-entry " type="password" id="password" name="_password" required="required" />
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div id="window-overlay" class="window-overlay" style="display:none;"></div>
+                                            <div id="remember-me-popup" class="remember-me-popup" style="display:none;">
+                                                <div class="remember-me-popup-head">
+                                                    <h3>What's this?</h3>
+                                                    <a href="#" class="remember-me-popup-close" title="Close">Close</a>
+                                                </div>
+                                                <div class="remember-me-popup-body">
+                                                    <p>Checking &quot;Remember Me&quot; will let you access your shopping cart on this computer when you are logged out</p>
+                                                    <div class="remember-me-popup-close-button a-right">
+                                                    <a href="#" class="remember-me-popup-close button" title="Close"><span>Close</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <script type="text/javascript">
+                                        //<![CDATA[
+                                            function toggleRememberMepopup(event){
+                                                if($('remember-me-popup')){
+                                                    var viewportHeight = document.viewport.getHeight(),
+                                                        docHeight      = $$('body')[0].getHeight(),
+                                                        height         = docHeight > viewportHeight ? docHeight : viewportHeight;
+                                                    $('remember-me-popup').toggle();
+                                                    $('window-overlay').setStyle({ height: height + 'px' }).toggle();
+                                                }
+                                                Event.stop(event);
+                                            }
+
+                                            document.observe("dom:loaded", function() {
+                                                new Insertion.Bottom($$('body')[0], $('window-overlay'));
+                                                new Insertion.Bottom($$('body')[0], $('remember-me-popup'));
+
+                                                $$('.remember-me-popup-close').each(function(element){
+                                                    Event.observe(element, 'click', toggleRememberMepopup);
+                                                })
+                                                $$('#remember-me-box a').each(function(element) {
+                                                    Event.observe(element, 'click', toggleRememberMepopup);
+                                                });
+                                            });
+                                        //]]>
+                                        </script>
+
+                                            <p class="required">* Champs obligatoires </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col2-set">
+                                    
+                                    <div class="col-2 registered-users">
+                                        {% if error %}
+                                        <div style="color: red;">{{ error|trans }}</div>
+                                        {% endif %}
+                                        <div class="buttons-set">
+                                            <a href="http://livedemo00.template-help.com/magento_36548/customer/account/forgotpassword/" class="f-left">Vous avez oublié votre mot de passe?</a>
+                                            
+                                            <button type="submit" class="button" title="Login" name="_submit" id="_submit"><span><span>{{ 'security.login.submit'|trans }}</span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col-1 new-users" style="float: left;">
+                                        <div class="buttons-set">
+                                            <form action="{{path('golden_cage_front_office_inscriptionclientpage')}}" method="post">
+                                            <button type="submit" title="CRÉER UN COMPTE" class="button" onclick="window.location='';"><span><span>CRÉER UN COMPTE </span></span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                            <br>
+                            <script type="text/javascript">
+                                        //<![CDATA[
+                                            var dataForm = new VarienForm('login-form', true);
+                                        //]]>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="page">
+{%endblock%}
